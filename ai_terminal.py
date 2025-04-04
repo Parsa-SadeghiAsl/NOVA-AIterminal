@@ -3,6 +3,7 @@ from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from prompt_toolkit.completion import Completer, Completion
 from prompt_toolkit.styles import Style
+from prompt_toolkit.formatted_text import HTML
 import yaml
 import os
 import subprocess
@@ -60,15 +61,17 @@ class NOVATerminal:
             "completion": self.config["style"]["suggestion"],
             "error": self.config["style"]["error"],
             "info": self.config["style"]["info"],
+            "nova": "bold #67038f",  # Bold blue for NOVA
+            "path": "#00ab0e",       # Green for path
         })
 
-    def _get_prompt(self) -> str:
+    def _get_prompt(self) -> HTML:
         """Get the current prompt with working directory."""
         cwd = os.getcwd()
         home = os.path.expanduser("~")
         if cwd.startswith(home):
             cwd = "~" + cwd[len(home):]
-        return f"[bold blue]NOVA[/bold blue] {cwd} {self.config['terminal']['prompt']}"
+        return HTML(f'<nova>NOVA</nova> <path>{cwd}</path> {self.config["terminal"]["prompt"]}')
 
     def _execute_command(self, command: str) -> None:
         """Execute a command and handle the output."""

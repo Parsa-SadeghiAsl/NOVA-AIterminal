@@ -11,7 +11,9 @@ terminal:
   completion_threshold: 0.5
 
 style:
-  prompt: "bold green"
-  suggestion: "italic blue"
-  error: "bold red"
-  info: "cyan" 
+  prompt: "bold #00ff00"
+  suggestion: "italic #0000ff"
+  error: "bold #ff0000"
+  info: "#00ffff"
+  nova: "bold #0000ff"
+  path: "#00ff00" 

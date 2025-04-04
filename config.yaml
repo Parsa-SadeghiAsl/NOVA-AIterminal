@@ -1,0 +1,17 @@
+ollama:
+  base_url: "http://localhost:11434"
+  model: "qwen2.5-coder:1.5b-base"
+  temperature: 0.7
+  max_tokens: 100
+
+terminal:
+  prompt: "> "
+  history_file: "~/.nova_history"
+  max_history: 1000
+  completion_threshold: 0.5
+
+style:
+  prompt: "bold green"
+  suggestion: "italic blue"
+  error: "bold red"
+  info: "cyan" 

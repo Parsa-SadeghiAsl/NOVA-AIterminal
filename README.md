@@ -32,7 +32,7 @@ We welcome contributions! Please see our [Contributing Guide](docs/CONTRIBUTING.
 
 ## License
 
-[License Type] - See [LICENSE](LICENSE) for details.
+[GPL-3.0 license] - See [LICENSE](LICENSE) for details.
 
 ---
 🌟 Star us on GitHub

@@ -15,5 +15,5 @@ style:
   suggestion: "italic #0000ff"
   error: "bold #ff0000"
   info: "#00ffff"
-  nova: "bold #0000ff"
-  path: "#00ff00" 
+  nova: "bold #67038f"
+  path: "#00ab0e" 

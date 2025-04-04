@@ -61,8 +61,8 @@ class NOVATerminal:
             "completion": self.config["style"]["suggestion"],
             "error": self.config["style"]["error"],
             "info": self.config["style"]["info"],
-            "nova": "bold #67038f",  # Bold blue for NOVA
-            "path": "#00ab0e",       # Green for path
+            "nova": self.config["style"]["nova"],
+            "path": self.config["style"]["path"]
         })
 
     def _get_prompt(self) -> HTML:

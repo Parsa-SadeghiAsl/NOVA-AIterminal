@@ -22,9 +22,9 @@ NOVA combines the reliability of traditional terminals with the power of AI assi
 - prompt_toolkit for terminal interface
 - Rich for modern terminal styling
 
-## documentation
+## Documentation
 
-For detailed documentation, visit our [documentation](docs/README.md).
+For detailed documentation, visit our [documentation](docs/Documentation.md).
 
 ## Contributing
 

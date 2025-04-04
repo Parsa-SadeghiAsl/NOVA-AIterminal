@@ -1,49 +1,38 @@
 # NOVA - AI-Powered Terminal
 
-A modern terminal with AI-powered command completion using Ollama's local models.
+NOVA is a modern, intelligent terminal application that enhances the traditional terminal experience with AI-powered command completion. By leveraging Ollama's local AI models, NOVA provides context-aware command suggestions while maintaining the familiar feel of a traditional terminal.
 
-## Features
+## Key Features
 
-- AI-powered command suggestions and completions
-- Modern terminal interface
-- Command history management
-- Context-aware completions
-- Customizable configuration
+- 🤖 AI-powered command suggestions using local models (privacy-focused)
+- 🔄 Traditional tab completion enhanced with AI understanding
+- 📝 Smart command history management
+- 🎨 Modern, customizable interface
+- 🏠 Context-aware directory handling
+- ⚡ Local execution with no cloud dependencies
 
-## Requirements
+## Why NOVA?
+
+NOVA combines the reliability of traditional terminals with the power of AI assistance. Unlike cloud-based solutions, it runs entirely on your local machine using Ollama's models, ensuring your command history and data remain private. Whether you're a seasoned developer or new to the command line, NOVA helps you work more efficiently with intelligent command suggestions that learn from your usage patterns.
+
+## Tech Stack
 
 - Python 3.8+
-- Ollama installed and running locally
-- qwen2.5-coder:1.5b-base model pulled in Ollama
+- Ollama (local AI models)
+- prompt_toolkit for terminal interface
+- Rich for modern terminal styling
 
-## Installation
+## documentation
 
-1. Clone this repository
+For detailed documentation, visit our [documentation](docs/README.md).
 
-2. Make a virtual environment:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Make sure Ollama is running and the model is pulled:
-   ```bash
-   ollama pull qwen2.5-coder:1.5b-base
-   ```
+## Contributing
 
-## Usage
+We welcome contributions! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for details.
 
-Run NOVA:
-```bash
-python main.py
-```
+## License
 
-## Configuration
+[License Type] - See [LICENSE](LICENSE) for details.
 
-Edit `config.yaml` to customize:
-- Model settings
-- Prompt styling
-- Completion behavior 
+---
+🌟 Star us on GitHub

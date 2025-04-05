@@ -32,10 +32,9 @@ class OllamaClient:
             completion = response.json()["response"].strip()
             
             # Clean up the completion
-            completion = completion.split('\n')[0]  # Take only the first line
-            completion = completion.strip()  # Remove extra whitespace
+            completion = completion.split('\n')[0].strip()
             
-            # If the completion is just a description, return the original prompt
+            # Return original prompt if completion is invalid
             if not any(c in completion for c in [' ', '|', '>', '<', '&', ';']):
                 return prompt
                 

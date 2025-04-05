@@ -7,9 +7,8 @@ from prompt_toolkit.formatted_text import HTML
 import yaml
 import os
 import subprocess
-from typing import List, Optional
+from typing import List
 from rich.console import Console
-from rich.prompt import Prompt
 from ollama_client import OllamaClient
 
 class AICompleter(Completer):

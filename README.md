@@ -2,7 +2,6 @@
 
 NOVA is a modern, intelligent terminal application that enhances the traditional terminal experience with AI-powered command completion. By leveraging Ollama's local AI models, NOVA provides context-aware command suggestions while maintaining the familiar feel of a traditional terminal.
 
-![Screenshot from 2025-04-05 14-48-56](https://github.com/user-attachments/assets/108bcde3-9671-4a9d-b51b-f3ff9b86052c)
 
 ## Key Features
 

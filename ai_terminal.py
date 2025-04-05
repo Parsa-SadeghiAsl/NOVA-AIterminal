@@ -104,6 +104,7 @@ class NOVATerminal:
         """Run the terminal interface."""
         self.console.print("[bold blue]NOVA[/bold blue] [info]Terminal started. Type 'exit' to quit.[/info]")
         self.console.print("[info]Press Tab for AI completions.[/info]")
+        self.console.print("[info]You can use natural language commands (e.g., 'show me files larger than 100MB')[/info]")
         
         while True:
             try:

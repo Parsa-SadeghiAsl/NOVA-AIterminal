@@ -7,7 +7,6 @@ from prompt_toolkit.formatted_text import HTML
 import yaml
 import os
 import subprocess
-import asyncio
 import time
 from typing import List, Optional
 from rich.console import Console

@@ -1,7 +1,6 @@
 import requests
 import yaml
 from typing import List, Dict, Any
-import os
 
 class OllamaClient:
     def __init__(self, config_path: str = "config.yaml"):
@@ -15,7 +14,7 @@ class OllamaClient:
             return yaml.safe_load(f)
 
     def get_completion(self, prompt: str, context: List[str] = None) -> str:
-        """Get command completion from the model."""
+        # Get command completion from the model.
         try:
             full_prompt = self._build_prompt(prompt, context)
             response = requests.post(
@@ -44,7 +43,7 @@ class OllamaClient:
             return prompt
 
     def _get_system_prompt(self) -> str:
-        """Get the system prompt that defines the model's behavior."""
+        # Get the system prompt that defines the model's behavior.
         return """You are NOVA, an expert terminal assistant specialized in command completion and shell operations.
 Your task is to help users complete their commands efficiently and correctly. You can also translate natural language commands to shell commands.
 
@@ -75,7 +74,7 @@ Examples of natural language to shell command translation:
 Remember: Your goal is to provide the most useful and efficient command completion possible."""
         
     def _build_prompt(self, prompt: str, context: List[str] = None) -> str:
-        """Build the prompt for the model."""
+        # Build the prompt for the model.
         base_prompt = """Complete the following command based on the context.
 Context is a list of previous commands. Provide only the completed command, nothing else.
 

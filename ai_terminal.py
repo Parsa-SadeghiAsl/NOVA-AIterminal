@@ -94,7 +94,7 @@ class NOVATerminal:
         """Execute a command and handle the output."""
         try:
             # Handle special commands
-            if command == "clear":
+            if command.strip() == "clear":
                 os.system('clear')
                 return
             elif command.startswith("cd "):

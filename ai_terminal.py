@@ -7,7 +7,9 @@ from prompt_toolkit.formatted_text import HTML
 import yaml
 import os
 import subprocess
-from typing import List
+import asyncio
+import time
+from typing import List, Optional
 from rich.console import Console
 from ollama_client import OllamaClient
 
@@ -15,11 +17,27 @@ class AICompleter(Completer):
     def __init__(self, ollama_client: OllamaClient, command_history: List[str]):
         self.ollama = ollama_client
         self.command_history = command_history
+        self.last_request_time = 0
+        self.min_chars = 3  # Minimum characters before triggering completion
+        self.debounce_time = 0.3  # Debounce time in seconds
+        self._current_completion: Optional[str] = None
 
     def get_completions(self, document, complete_event):
         text = document.text_before_cursor
-        if not text.strip():
+        if not text.strip() or len(text.strip()) < self.min_chars:
             return
+
+        current_time = time.time()
+        if current_time - self.last_request_time < self.debounce_time:
+            if self._current_completion and self._current_completion != text:
+                yield Completion(
+                    self._current_completion,
+                    start_position=-len(text),
+                    style="class:completion",
+                )
+            return
+
+        self.last_request_time = current_time
 
         try:
             # Get last few commands for context
@@ -27,6 +45,7 @@ class AICompleter(Completer):
             completion = self.ollama.get_completion(text, context)
             
             if completion and completion != text:
+                self._current_completion = completion
                 yield Completion(
                     completion,
                     start_position=-len(text),

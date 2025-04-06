@@ -32,10 +32,13 @@ class OllamaClient:
             
             # Clean up the completion
             completion = completion.split('\n')[0].strip()
+            # Remove backticks and quotes from the beginning and end of the completion
+            if ['`', '"', "'"] in completion[0] and ['`', '"', "'"] in completion[-1]:
+                completion = completion[1:-1]
             
             # Return original prompt if completion is invalid
-            if not any(c in completion for c in [' ', '|', '>', '<', '&', ';']):
-                return prompt
+            # if not any(c in completion for c in [' ', '|', '>', '<', '&', ';']):
+            #     return prompt
                 
             return completion
         except Exception as e:

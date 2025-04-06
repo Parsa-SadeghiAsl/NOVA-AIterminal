@@ -83,7 +83,7 @@ class NOVATerminal:
         })
 
     def _get_prompt(self) -> HTML:
-        """Get the current prompt with working directory."""
+        # Get the current prompt with working directory.
         cwd = os.getcwd()
         home = os.path.expanduser("~")
         if cwd.startswith(home):
@@ -91,7 +91,7 @@ class NOVATerminal:
         return HTML(f'<nova>NOVA</nova> <path>{cwd}</path> {self.config["terminal"]["prompt"]}')
 
     def _execute_command(self, command: str) -> None:
-        """Execute a command and handle the output."""
+        # Execute a command and handle the output.
         try:
             # Handle special commands
             if command.strip() == "clear":
@@ -119,7 +119,7 @@ class NOVATerminal:
             self.console.print(f"[error]Error executing command: {e}[/error]")
 
     def run(self):
-        """Run the terminal interface."""
+        # Run the terminal interface.
         self.console.print("[bold blue]NOVA[/bold blue] [info]Terminal started. Type 'exit' to quit.[/info]")
         self.console.print("[info]Press Tab for AI completions.[/info]")
         self.console.print("[info]You can use natural language commands (e.g., 'show me files larger than 100MB')[/info]")
